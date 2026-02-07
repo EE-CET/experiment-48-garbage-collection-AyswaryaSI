@@ -1,16 +1,12 @@
-class GarbageCollection {
+public class GarbageCollection {
     @Override
     protected void finalize() {
         System.out.println("Garbage Collected");
     }
 
     public static void main(String[] args) {
-        GarbageDemo obj = new GarbageDemo();
-
-        // Make the object eligible for garbage collection
+        GarbageCollection obj = new GarbageCollection();
         obj = null;
-
-        // Request garbage collection
         System.gc();
     }
 }
